@@ -2,7 +2,6 @@ var mongoose = require("mongoose");
 var bcrypt = require('bcrypt');
 require("dotenv").config();
 const jwt = require('jsonwebtoken');
-const UserRole = require("../enums/UserRole");
 
 const SALT = 10;
 
@@ -26,6 +25,13 @@ address:{
 vehicle_type:{
     type:String,
     required:[true,'Vehicle type field is required!']
+},
+
+email:{
+    type:String,
+    required:[true,'Email field is required!'],
+    unique: true
+    
 },
 
 password:{

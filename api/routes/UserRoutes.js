@@ -1,16 +1,16 @@
 const { verifyToken } = require("../utils/verifyToken");
 
 module.exports = function(app){
-const CamperController = require("../controllers/UserController");
+const UserController = require("../controllers/UserController");
 
     app.get("/checkauthentication",verifyToken,(_req,res)=>{
         res.send("Hello user,you are loggedin ")
     });
 
-    app.put("/user/:id",CamperController.UpdateUser);
-    app.delete("/user/:id",CamperController.DeleteUser);
-    app.get("/user/:id",CamperController.UserID);
-    app.get("/users",CamperController.Users);
+    app.put("/user/:id",UserController.UpdateUser);
+    app.delete("/user/:id",UserController.DeleteUser);
+    app.get("/user/:id",UserController.UserID);
+    app.get("/users",UserController.Users);
     
 
 }

@@ -41,9 +41,12 @@ password:{
     
 },
 
-create_date:{
-    type:Date,
-    default:Date.now
+arrivaltime: {
+  type: String
+},
+
+finishtime: {
+  type: String
 }
 
 });

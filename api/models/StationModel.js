@@ -16,10 +16,10 @@ const StationSchema = new Schema({
         type: String,
         required: true
       },
-      arrivaltime: {
+      fuel_arrivaltime: {
         type: String
       },
-      finishtime: {
+      fuel_finishtime: {
         type: String
       },
       business_registration_number:{

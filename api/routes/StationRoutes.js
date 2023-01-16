@@ -3,7 +3,6 @@ const { verifyToken2 } = require("../utils/verifyToken");
 
 module.exports = function(app){
 
-const express = require('express')
 const StationController= require('../controllers/StationController.js')
 
 app.get("/checkauthentication",verifyToken2,(_req,res)=>{

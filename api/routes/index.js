@@ -10,6 +10,7 @@ router.get('/',function(req,res){
 require('./AuthRoutes')(router);
 require('./StationRoutes')(router);
 require('./UserRoutes')(router);
+require('./VehicleRoutes')(router);
 
 
 

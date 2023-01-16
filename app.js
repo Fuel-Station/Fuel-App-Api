@@ -12,28 +12,27 @@ app.use(cors());
 
 var port = process.env.PORT || 6000;
 
-mongoose.connect(process.env.DATABASE,{
-    useNewUrlParser: true,
-    useUnifiedTopology:true,
-    //useCreateIndex:true
-   
-});
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(bodyParser.json());
 
 var v1 = require('./api/routes');
-const { signedCookie } = require("cookie-parser");
-const cookieParser = require("cookie-parser");
 
 app.use('/api/v1', v1.router);
 
-
-app.use(function(req,res){
-    res.status(404).send({url:req.originalUrl+" not found"});
-});
-
-app.listen(port, () => {
-    console.log(`API server is started on: ${port}`);
-});
+mongoose.connect(process.env.DATABASE,{
+    useNewUrlParser: true,
+    useUnifiedTopology:true,
+    //useCreateIndex:true
+   
+})
+    .then(()=>{
+        app.listen(port, () => {
+            console.log(`API server is started on: ${port}`);
+        });
+    })
+    .catch((error)=>{
+        console.error(error.message);
+})

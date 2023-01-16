@@ -16,6 +16,12 @@ const StationSchema = new Schema({
         type: String,
         required: true
       },
+      arrivaltime: {
+        type: String
+      },
+      finishtime: {
+        type: String
+      },
       business_registration_number:{
         type: String,
         required: true,

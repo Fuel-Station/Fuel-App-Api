@@ -12,12 +12,12 @@ app.get("/checkauthentication",verifyToken2,(_req,res)=>{
 
 
 //UPDATE
-app.put('/campsite/:id', StationController.updateStation)
+app.put('/station/:id', StationController.updateStation)
 //DELETE
-app.delete('/campsite/:id', StationController.deleteStation)
+app.delete('/station/:id', StationController.deleteStation)
 //GET
-app.get('/campsite/:id', StationController.getStation)
+app.get('/station/:id', StationController.getStation)
 //GET ALL
-app.get('/campsites', StationController.getStation)
+app.get('/stations', StationController.getStation)
 
 }
